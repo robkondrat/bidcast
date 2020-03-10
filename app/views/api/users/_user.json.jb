@@ -1,0 +1,7 @@
+{
+  id: user.id,
+  type: user.type,
+  name: user.name,
+  description: user.description,
+  email: user.email
+}

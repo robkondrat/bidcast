@@ -1,0 +1,6 @@
+{
+  id: space.id,
+  podcast_id: space.podcast_id,
+  length: space.length,
+  active: space.active
+}

@@ -1,0 +1,1 @@
+render partial: "space.json.jb", locals: {space: @space}

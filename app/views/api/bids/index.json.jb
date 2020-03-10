@@ -1,0 +1,3 @@
+@bids.map do |bid|
+  render partial: "bid.json.jb", locals: {bid: bid}
+end
