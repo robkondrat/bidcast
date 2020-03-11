@@ -6,6 +6,18 @@ Rails.application.routes.draw do
     patch '/users/:id' => 'users#update'
     delete '/users/:id' => 'users#destroy'
 
+    get '/podcasts' => 'podcasts#index'
+    post '/podcasts' => 'podcasts#create'
+    get '/podcasts/:id' => 'podcasts#show'
+    patch '/podcasts/:id' => 'podcasts#update'
+    delete '/podcasts/:id' => 'podcasts#destroy'
+
+    get '/advertisers' => 'advertisers#index'
+    post '/advertisers' => 'advertisers#create'
+    get '/advertisers/:id' => 'advertisers#show'
+    patch '/advertisers/:id' => 'advertisers#update'
+    delete '/advertisers/:id' => 'advertisers#destroy'
+
     post '/sessions' => 'sessions#create'
 
 

@@ -1,0 +1,6 @@
+{
+  id: podcast.id,
+  name: podcast.name,
+  description: podcast.description,
+  email: podcast.email
+}
