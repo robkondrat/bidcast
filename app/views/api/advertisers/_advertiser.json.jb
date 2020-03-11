@@ -1,0 +1,6 @@
+{
+  id: advertiser.id,
+  name: advertiser.name,
+  description: advertiser.description,
+  email: advertiser.email
+}
