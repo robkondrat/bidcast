@@ -1,6 +1,6 @@
 class Api::BidsController < ApplicationController
 
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_advertiser, except: [:index, :show]
 
   def index
     @bids = Bid.all 

@@ -1,5 +1,5 @@
 class Api::PodcastsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_podcast, except: [:index, :show, :create]
   
   
   def index
@@ -45,7 +45,7 @@ class Api::PodcastsController < ApplicationController
   end
 
   def destroy
-    
+
     podcast = Podcast.find(params[:id])
     podcast.delete
     render json: {message: "Podcast ID #{podcast.id} successfully deleted."}
