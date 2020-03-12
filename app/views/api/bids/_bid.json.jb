@@ -2,5 +2,11 @@
   id: bid.id,
   price: bid.price,
   advertiser_id: bid.advertiser_id,
-  space_id: bid.space_id
+  space_id: bid.space_id,
+  advertiser: {
+    id: bid.advertiser.id,
+    name: bid.advertiser.name,
+    description: bid.advertiser.description,
+    email: bid.advertiser.email
+  }
 }

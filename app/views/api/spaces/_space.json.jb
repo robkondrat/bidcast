@@ -2,5 +2,11 @@
   id: space.id,
   podcast_id: space.podcast_id,
   length: space.length,
-  active: space.active
+  active: space.active,
+  podcast: {
+    id: space.podcast.id,
+    name: space.podcast.name,
+    description: space.podcast.description,
+    email: space.podcast.email
+  }
 }
