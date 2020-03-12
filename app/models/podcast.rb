@@ -1,4 +1,4 @@
 class Podcast < User
-  has_many :spaces
+  has_many :spaces, dependent: :destroy
 
 end

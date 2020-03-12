@@ -45,6 +45,7 @@ class Api::PodcastsController < ApplicationController
   end
 
   def destroy
+    
     podcast = Podcast.find(params[:id])
     podcast.delete
     render json: {message: "Podcast ID #{podcast.id} successfully deleted."}
