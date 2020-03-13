@@ -1,12 +1,22 @@
 {
   id: bid.id,
   price: bid.price,
-  advertiser_id: bid.advertiser_id,
-  space_id: bid.space_id,
   advertiser: {
     id: bid.advertiser.id,
     name: bid.advertiser.name,
     description: bid.advertiser.description,
     email: bid.advertiser.email
+  },
+  space: {
+    id: bid.space.id,
+    podcast_id: bid.space.podcast_id,
+    length: bid.space.length,
+    active: bid.space.active,
+    podcast: {
+      id: bid.space.podcast.id,
+      name: bid.space.podcast.name,
+      description: bid.space.podcast.description,
+      email: bid.space.podcast.email
+    }
   }
 }

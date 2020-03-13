@@ -10,9 +10,10 @@ class Api::BidsController < ApplicationController
   def create
     @bid = Bid.new(
               price: params[:price],
-              advertiser_id: params[:advertiser_id],
+              advertiser_id: current_advertiser.id,
               space_id: params[:space_id]
               )
+    
     if @bid.save
       render "show.json.jb"
     else

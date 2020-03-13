@@ -1,5 +1,5 @@
 class Api::PodcastsController < ApplicationController
-  before_action :authenticate_podcast, except: [:index, :show, :create]
+  before_action :authenticate_podcast, except: [:index, :show, :create, :update]
   
   
   def index

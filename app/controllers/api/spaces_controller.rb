@@ -1,5 +1,5 @@
 class Api::SpacesController < ApplicationController
-  before_action :authenticate_podcast, except: [:index, :show]
+  before_action :authenticate_podcast, except: [:index, :show, :create]
   
 
   def index

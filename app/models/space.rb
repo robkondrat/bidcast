@@ -4,7 +4,7 @@ class Space < ApplicationRecord
 
   validates :length, presence: true
   validates :active, presence: true
-  validates :boolean_field_name, inclusion: { in: [true, false] }
+
 
   # def podcast
   #   Podcast.find_by(id: self.podcast_id)
