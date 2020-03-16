@@ -11,6 +11,7 @@ class Api::AdvertisersController < ApplicationController
     @advertiser = Advertiser.new(
                     name: params[:name],
                     description: params[:description],
+                    image: params[:image],
                     email: params[:email],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],

@@ -1,7 +1,13 @@
-{
+result = {
   id: user.id,
   type: user.type,
   name: user.name,
   description: user.description,
   email: user.email
 }
+
+if user.image.attachment
+  result[:image_url] = rails_blob_url(user.image)
+end
+
+result

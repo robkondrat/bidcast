@@ -10,6 +10,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(
                     name: params[:name],
                     description: params[:description],
+                    image: params[:params],
                     email: params[:email],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],

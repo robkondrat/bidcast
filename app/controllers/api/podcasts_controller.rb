@@ -12,6 +12,7 @@ class Api::PodcastsController < ApplicationController
                     name: params[:name],
                     description: params[:description],
                     email: params[:email],
+                    image: params[:image],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
                     type: params[:type]
