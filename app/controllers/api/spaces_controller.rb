@@ -1,5 +1,5 @@
 class Api::SpacesController < ApplicationController
-  before_action :authenticate_podcast, except: [:index, :show, :create]
+  before_action :authenticate_podcast, except: [:index, :show]
   
 
   def index
@@ -9,7 +9,7 @@ class Api::SpacesController < ApplicationController
 
   def create
     @space = Space.new(
-        podcast_id: params[:podcast_id],
+        podcast_id: current_podcast.id,
         length: params[:length],
         active: true
         )

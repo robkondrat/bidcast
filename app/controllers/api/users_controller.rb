@@ -46,7 +46,11 @@ class Api::UsersController < ApplicationController
   def destroy
 
     user = User.find(params[:id])
-    user.delete
+    if user.type == "Podcast"
+      Podcast.find(params[:id]).delete
+    else
+      Advertiser.find(params[:id]).delete
+    end
     render json: {message: "User ID #{user.id} successfully deleted."}
   end
 

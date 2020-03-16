@@ -1,9 +1,9 @@
 class Space < ApplicationRecord
   belongs_to :podcast
-  has_many :bids
+  has_many :bids, dependent: :destroy
 
-  validates :length, presence: true
-  validates :active, presence: true
+  validates :length, presence: true, numericality: { greater_than: 0, less_than: 210 }
+
 
 
   # def podcast

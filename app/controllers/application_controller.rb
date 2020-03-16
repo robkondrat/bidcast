@@ -28,6 +28,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_advertiser
 
   def current_podcast
+    puts '=' * 30
+    request.headers["Authorization"]
+    puts '=' * 30
     auth_headers = request.headers["Authorization"]
     if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]
 
