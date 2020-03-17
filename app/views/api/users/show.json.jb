@@ -1,2 +1,1 @@
 render partial: "user.json.jb", locals: {user: @user}
-json.image_url rails_blob_url(user.image) if user.image.attachment

@@ -8,5 +8,6 @@
     name: space.podcast.name,
     description: space.podcast.description,
     email: space.podcast.email
-  }
+  },
+  bids: space.bids.map {|bid| render partial: "api/bids/bid.json.jb", locals: {bid: bid} }
 }

@@ -2,7 +2,8 @@ result = {
   id: podcast.id,
   name: podcast.name,
   description: podcast.description,
-  email: podcast.email
+  email: podcast.email,
+  spaces: podcast.spaces.map {|space| render partial: "api/spaces/space.json.jb", locals: {space: space}}
 }
 
 if podcast.image.attachment
