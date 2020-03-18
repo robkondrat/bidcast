@@ -4,6 +4,7 @@ class Api::SpacesController < ApplicationController
 
   def index
     @spaces = Space.all
+
     render "index.json.jb"
   end
 
@@ -22,6 +23,10 @@ class Api::SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+
+    if @space.active
+      @space.time_left = Time.now - @space.created_at
+    end
     render 'show.json.jb'
   end
 

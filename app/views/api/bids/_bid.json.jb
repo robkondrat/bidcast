@@ -12,6 +12,8 @@
     podcast_id: bid.space.podcast_id,
     length: bid.space.length,
     active: bid.space.active,
+    highest_bid: bid.space.highest_bid,
+    time_left: bid.space.time_left,
     podcast: {
       id: bid.space.podcast.id,
       name: bid.space.podcast.name,

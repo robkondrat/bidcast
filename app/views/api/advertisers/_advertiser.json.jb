@@ -2,7 +2,9 @@ result = {
   id: advertiser.id,
   name: advertiser.name,
   description: advertiser.description,
-  email: advertiser.email
+  email: advertiser.email,
+  bids: advertiser.bids.map {|bid| render partial: "api/bids/bid.json.jb", locals: {bid: bid}}
+
 }
 
 if advertiser.image.attachment

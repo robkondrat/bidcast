@@ -9,5 +9,20 @@ class Space < ApplicationRecord
     !active
   end
 
+  def time_left
+    if active
+      remaining = (created_at + 3.days) - Time.now
+    end
+  end
+
+  def highest_bid
+    prices = bids.map{ |bid| bid.price }
+    prices.max
+  end
+
+  def deadline
+    (created_at + 3.days).strftime("%b %e, %l:%M %p")
+  end
+
 
 end

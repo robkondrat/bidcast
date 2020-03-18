@@ -3,6 +3,10 @@
   podcast_id: space.podcast_id,
   length: space.length,
   active: space.active,
+  created_at: space.created_at,
+  time_left: space.time_left,
+  highest_bid: space.highest_bid,
+  deadline: space.deadline,
   podcast: {
     id: space.podcast.id,
     name: space.podcast.name,

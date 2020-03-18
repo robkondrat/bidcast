@@ -13,6 +13,7 @@ class Api::BidsController < ApplicationController
               advertiser_id: current_advertiser.id,
               space_id: params[:space_id]
               )
+
     
     if @bid.save
       render "show.json.jb"
