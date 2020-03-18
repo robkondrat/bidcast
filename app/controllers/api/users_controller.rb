@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(
                     name: params[:name],
                     description: params[:description],
-                    image: params[:params],
+                    image: params[:image],
                     email: params[:email],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
@@ -36,6 +36,7 @@ class Api::UsersController < ApplicationController
     @user.name = params[:name] || @user.name
     @user.description = params[:description] || @user.description
     @user.email = params[:email] || @user.email
+    @user.image = params[:image] || @user.image
 
     if @user.save
       render "show.json.jb"
