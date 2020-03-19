@@ -36,7 +36,7 @@ class Api::UsersController < ApplicationController
     @user.name = params[:name] || @user.name
     @user.description = params[:description] || @user.description
     @user.email = params[:email] || @user.email
-    @user.image = params[:image] || @user.image
+    # @user.image = params[:image] || @user.image
 
     if @user.save
       render "show.json.jb"

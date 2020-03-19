@@ -28,8 +28,18 @@ class Space < ApplicationRecord
         end
       end
     end
-
   end
+
+  def winning_advertiser_id
+    if bids != []
+      bids.each do |bid|
+        if bid.price == highest_bid
+          return bid.advertiser.id
+        end
+      end
+    end
+  end
+
 
   def deadline
     (created_at + 3.days).strftime("%b %e, %l:%M %p")
