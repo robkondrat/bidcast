@@ -1,5 +1,5 @@
 class Api::SpacesController < ApplicationController
-  before_action :authenticate_podcast, except: [:index, :show]
+  before_action :authenticate_podcast, except: [:index, :show, :test]
   
 
   def index
@@ -14,11 +14,10 @@ class Api::SpacesController < ApplicationController
         length: params[:length],
         active: true
         )
-    if @space.save
-      render "show.json.jb"
-    else
-      render json: { errors: @space.errors.full_messages }, status: :unprocessable_entity
-    end
+    @space.save
+
+    render "show.json.jb"
+
   end
 
   def show
@@ -36,11 +35,10 @@ class Api::SpacesController < ApplicationController
     @space.podcast_id = params[:podcast_id] || @space.podcast_id
     @space.length = params[:length] || @space.length
 
-    if @space.save
-      render "show.json.jb"
-    else
-      render json: { errors: @space.errors.full_messages }, status: :unprocessable_entity
-    end
+    @space.save
+
+    render "show.json.jb"
+
   end
 
   def destroy
@@ -48,6 +46,7 @@ class Api::SpacesController < ApplicationController
     space.delete
     render json: {message: "Space ID #{space.id} successfully deleted."}
   end
+
 
 
 end
