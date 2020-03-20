@@ -1,0 +1,8 @@
+{
+  id: message.id,
+  user_id: message.user_id,
+  body: message.body,
+  name: message.user.name,
+  created_at: message.created_at.strftime("%b %e, %l:%M %p")
+
+}
