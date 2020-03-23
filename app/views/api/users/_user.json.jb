@@ -3,7 +3,8 @@ result = {
   type: user.type,
   name: user.name,
   description: user.description,
-  email: user.email
+  email: user.email,
+  youtube_url: user.youtube_url
 }
 
 if user.image.attachment

@@ -14,8 +14,11 @@ class Api::UsersController < ApplicationController
                     email: params[:email],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
-                    type: params[:type]
+                    type: params[:type],
+                    youtube_url: params[:youtube_url]
                     )
+
+    @user.youtube_embed
 
     if @user.save
       render json: { message: "User created successfully" }, status: :created
@@ -36,7 +39,10 @@ class Api::UsersController < ApplicationController
     @user.name = params[:name] || @user.name
     @user.description = params[:description] || @user.description
     @user.email = params[:email] || @user.email
+    @user.youtube_url = params[:youtube_url] || @user.youtube_url
     # @user.image = params[:image] || @user.image
+
+    @user.youtube_embed
 
     if @user.save
       render "show.json.jb"

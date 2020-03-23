@@ -3,6 +3,7 @@ result = {
   name: podcast.name,
   description: podcast.description,
   email: podcast.email,
+  youtube_url: podcast.youtube_url,
   spaces: podcast.spaces.map {|space| render partial: "api/spaces/space.json.jb", locals: {space: space}}
 }
 
