@@ -3,6 +3,7 @@ result = {
   name: advertiser.name,
   description: advertiser.description,
   email: advertiser.email,
+  youtube_url: advertiser.youtube_url,
   bids: advertiser.bids.map {|bid| render partial: "api/bids/bid.json.jb", locals: {bid: bid}}
 
 }

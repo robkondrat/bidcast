@@ -1,5 +1,5 @@
 class Api::PodcastsController < ApplicationController
-  before_action :authenticate_podcast, except: [:index, :show, :create, :update]
+  before_action :authenticate_podcast, except: [:index, :show, :create]
   
   
   def index
@@ -15,7 +15,8 @@ class Api::PodcastsController < ApplicationController
                     image: params[:image],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
-                    type: params[:type]
+                    type: params[:type],
+                    youtube_url: params[:youtube_url]
                     )
 
     if @podcast.save
@@ -37,6 +38,7 @@ class Api::PodcastsController < ApplicationController
     @podcast.name = params[:name] || @podcast.name
     @podcast.description = params[:description] || @podcast.description
     @podcast.email = params[:email] || @podcast.email
+    @podcast.youtube_Url = params[:youtube_url] || @podcast.youtube_url
 
     if @podcast.save
       render "show.json.jb"

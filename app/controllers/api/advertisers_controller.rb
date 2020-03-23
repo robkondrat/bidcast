@@ -15,7 +15,8 @@ class Api::AdvertisersController < ApplicationController
                     email: params[:email],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
-                    type: params[:type]
+                    type: params[:type],
+                    youtube_url: params[:youtube_url]
                     )
 
     if @advertiser.save
@@ -37,6 +38,7 @@ class Api::AdvertisersController < ApplicationController
     @advertiser.name = params[:name] || @advertiser.name
     @advertiser.description = params[:description] || @advertiser.description
     @advertiser.email = params[:email] || @advertiser.email
+    @advertiser.youtube_url = params[:youtube_url] || @advertiser.youtube_url
 
     if @advertiser.save
       render "show.json.jb"
