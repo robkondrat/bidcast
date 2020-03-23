@@ -18,6 +18,8 @@ class Api::UsersController < ApplicationController
                     youtube_url: params[:youtube_url]
                     )
 
+    @user.youtube_embed
+
     if @user.save
       render json: { message: "User created successfully" }, status: :created
     else
@@ -39,6 +41,8 @@ class Api::UsersController < ApplicationController
     @user.email = params[:email] || @user.email
     @user.youtube_url = params[:youtube_url] || @user.youtube_url
     # @user.image = params[:image] || @user.image
+
+    @user.youtube_embed
 
     if @user.save
       render "show.json.jb"

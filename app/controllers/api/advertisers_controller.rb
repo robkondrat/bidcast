@@ -19,6 +19,8 @@ class Api::AdvertisersController < ApplicationController
                     youtube_url: params[:youtube_url]
                     )
 
+    @advertiser.youtube_embed
+
     if @advertiser.save
       render json: { message: "Advertiser created successfully" }, status: :created
     else
@@ -39,6 +41,8 @@ class Api::AdvertisersController < ApplicationController
     @advertiser.description = params[:description] || @advertiser.description
     @advertiser.email = params[:email] || @advertiser.email
     @advertiser.youtube_url = params[:youtube_url] || @advertiser.youtube_url
+
+    @advertiser.youtube_embed
 
     if @advertiser.save
       render "show.json.jb"

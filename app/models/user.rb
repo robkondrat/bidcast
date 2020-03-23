@@ -8,4 +8,11 @@ class User < ApplicationRecord
   validates :password, presence: true, on: :create
   validates :type, inclusion: { in: ["Podcast", "Advertiser"]}
 
+
+  def youtube_embed
+    if youtube_url
+      youtube_url.sub!("watch?v=", "embed/")
+    end
+  end
+
 end

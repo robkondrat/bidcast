@@ -18,7 +18,7 @@ class Api::PodcastsController < ApplicationController
                     type: params[:type],
                     youtube_url: params[:youtube_url]
                     )
-
+    @podcast.youtube_embed
     if @podcast.save
       render json: { message: "Podcast created successfully" }, status: :created
     else
@@ -38,7 +38,9 @@ class Api::PodcastsController < ApplicationController
     @podcast.name = params[:name] || @podcast.name
     @podcast.description = params[:description] || @podcast.description
     @podcast.email = params[:email] || @podcast.email
-    @podcast.youtube_Url = params[:youtube_url] || @podcast.youtube_url
+    @podcast.youtube_url = params[:youtube_url] || @podcast.youtube_url
+
+    @podcast.youtube_embed
 
     if @podcast.save
       render "show.json.jb"
