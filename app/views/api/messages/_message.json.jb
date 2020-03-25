@@ -4,10 +4,6 @@
   body: message.body,
   name: message.user.name,
   created_at: message.created_at.strftime("%b %e, %l:%M %p"),
-  user: {
-    id: message.user.id,
-    name: message.user.name,
-    type: message.user.type
-  }
+  user_type: message.user_type
 
 }
