@@ -10,6 +10,8 @@ class Api::MessagesController < ApplicationController
       body: params[:body]
       )
 
+    # @message.user_type
+
     @message.save
 
     ActionCable.server.broadcast "message_room_channel", {
@@ -17,6 +19,7 @@ class Api::MessagesController < ApplicationController
       user_id: @message.user_id,
       body: @message.body,
       name: @message.user.name,
+      user_type: @message.user_type,
       created_at: @message.created_at.strftime("%b %e, %l:%M %p")
     }
 
